@@ -1,0 +1,32 @@
+*** 게시판 ***
+- table 생성
+
+테이블명 : board
+
+- column : 
+	컬럼명			타입			제약조건			비고
+    	article_no		int       		PK				자동증가
+    	user_id			varchar(16)		NN
+	subject   		varchar(100)		NN
+	content			varchar(2000)		NN
+	register_time		timestamp						default current_timestamp
+
+* data 입력 (insert)
+1, ssafy, 제목1, 내용1, 현재시간기준 3일전입력
+2, admin, 제목2, 내용2, 현재시간기준 2일전입력
+3, ssafy, 제목3, 내용3, 현재시간기준 12시간전입력
+4, kim,   제목4, 내용4, 현재시간기준 2시간전입력
+5, park,  제목5, 내용5, 현재시간입력
+
+* data 출력 (select)
+- 글작성 날짜가 오늘일 경우 25.03.02 (년.월.일)
+		    이 아닐 경우 10:25:32 (시:분:초)
+- 최신글 순으로 정렬
+
+* 출력 결과
+5, 제목5, park,	 10:25:32
+4, 제목4, kim, 	 08:25:32
+3, 제목3, ssafy, 25.02.01
+2, 제목2, admin, 25.01.31
+1, 제목1, ssafy, 25.01.30
+
